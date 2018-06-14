@@ -18,6 +18,7 @@ phases:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
+      - aws s3 sync _book/ s3://im-joeshi-aws --delete --exclude ".git/*"
 artifacts:
   files:
     - _book/**/*
