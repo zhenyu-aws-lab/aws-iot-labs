@@ -19,6 +19,7 @@ phases:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
       - aws s3 sync _book/ s3://im-joeshi-aws/iot/ --delete --exclude ".git/*"
+      - aws cloudfront create-invalidation --distribution-id E2D6JGIECXYGAG --path /iot/*
 artifacts:
   files:
     - _book/**/*
