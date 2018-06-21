@@ -1,13 +1,13 @@
 前提条件：
 ------
-
 使用具有IOT服务权限的用户登陆
 
  
 进入IOT Core service 如下图所示
 
+1[image]()
 
-####创建IOT中个的物（thing）
+#### 创建IOT中个的物（thing）
 
 * 创建物
 点击左侧列表Manage->Things,进入下述界面. 点击Create后选择 create a single thing.
@@ -57,7 +57,7 @@
 至次，设备再AWS IOT中的注册已经结束，下面进入模拟设备运行的环节。
 
 
-####设备运行代码，连接AWS IOT云端服务
+#### 设备运行代码，连接AWS IOT云端服务
 
 * 上传代码到设备
 由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
