@@ -75,7 +75,6 @@
 
 * 上传代码到设备
 由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
 
 上传完毕后采用下述的指令解压
 ```shell
@@ -94,8 +93,8 @@ total 16
 其中aws-smarthome-air-purifier 为代码解压目录
 * 修改代码并运行
 
-返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing 如light, 进入如下界面，红框即位endpoint
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
+返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing如light, 进入如下界面，红框即位endpoint
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
 
 
 返回树莓派命令行，下载node的相关依赖包，输入如下指令
@@ -105,7 +104,7 @@ $ npm install
 * 验证消息上传
 
 返回AWS Iot 界面，点击左侧 Test Tab，如下图所示订阅lights_online topic
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
 
 
 继续返回树莓派命令行
@@ -116,6 +115,7 @@ $node index.js
 同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。
 * 验证消息下发的逻辑
 同样的，在Test界面点击publish to topic, 进入如下界面，并修改输出如下图所示
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
 
 点击publish to topic，发现灯亮（风扇转）
 同理，修改message的value为0，点击Publish to topic发现灯灭（风扇停）。
