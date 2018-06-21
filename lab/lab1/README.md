@@ -2,14 +2,18 @@
 ------
 使用具有IOT服务权限的用户登陆
 
- 
+
+### 进入IOT服务
+
 进入IOT Core service 如下图所示
 
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic1.jpg)
 
-#### 创建IOT中个的物（thing）
+
+### 创建IOT中个的物（thing）
 
 * 创建物
+
 点击左侧列表Manage->Things,进入下述界面. 点击Create后选择 create a single thing.
 进入如下列表后, 输入对于本地设备的命名, 比如light, 其他保持默认点击下一步.
  
@@ -57,13 +61,15 @@
 至次，设备再AWS IOT中的注册已经结束，下面进入模拟设备运行的环节。
 
 
-#### 设备运行代码，连接AWS IOT云端服务
+### 设备运行代码，连接AWS IOT云端服务
 
 * 上传代码到设备
 由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
 
 上传完毕后采用下述的指令解压
+```shell
 $ tar -xvf demo1.tar
+```
 上传在1.中生成的证书到代码的同级目录，放置后如下所示:
 
 ```shell
@@ -83,22 +89,22 @@ total 16
 返回树莓派命令行，下载node的相关依赖包，输入如下指令
 ```shell
 $ npm install
-* 验证消息上传
 ```
+* 验证消息上传
+
 返回AWS Iot 界面，点击左侧 Test Tab，如下图所示订阅lights_online topic
 
 
 继续返回树莓派命令行
+```shell
 $node index.js
+```
 得到如下的输出
-
 同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。
-
 * 验证消息下发的逻辑
 同样的，在Test界面点击publish to topic, 进入如下界面，并修改输出如下图所示
 
 点击publish to topic，发现灯亮（风扇转）
 同理，修改message的value为0，点击Publish to topic发现灯灭（风扇停）。
 
-
-3.停止程序，断开电源
+### 停止程序，断开电源
