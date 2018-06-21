@@ -5,7 +5,7 @@
  
 进入IOT Core service 如下图所示
 
-1[image]()
+![image](http://github.com/aws-iot-labs/images/lab1/pic1.jpg)
 
 #### 创建IOT中个的物（thing）
 
