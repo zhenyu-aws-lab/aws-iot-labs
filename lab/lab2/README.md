@@ -68,9 +68,9 @@ $node index.js
 {
   "state":{
     "desired": {
-      "light": “on"
+      "light": "on"
     },
-    “reported": {
+    "reported": {
       "light": "on"
     }
   }
@@ -93,7 +93,7 @@ $node index.js
     "desired": {
       "light": "off"
     },
-    “reported": {
+    "reported": {
       "light": "off"
     }
   }
