@@ -42,9 +42,9 @@ $ npm install
 ```
 * 测试准备
 首先，在原有两个界面的基础上，再打开一个AWS IOT界面。三个界面分别为:
-> 界面1:树莓派命令行界面
-> 界面2:AWS IOT Test界面
-> 界面3:AWS IOT Manage->Thing->light->shadow
+  * 界面1:树莓派命令行界面
+  * 界面2:AWS IOT Test界面
+  * 界面3:AWS IOT Manage->Thing->light->shadow
 * 测试设备注册
 在树莓派界面执行下述程序。
 ```shell
