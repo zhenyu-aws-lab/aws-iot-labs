@@ -14,7 +14,6 @@
 
 * 创建物
 进入IOT 服务后，点击左侧列表Manage->Things,进入下述界面. 点击Register thing
-
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2-1.jpg)
 
 此界面，实际环境下我们通常选择注册多个事物，此处为了演示，我们选择create a single thing.
@@ -24,14 +23,14 @@
  
 * 生成证书
 此页面点击create certificate
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2-3.jpg)
 
 得到如下证书, 分别下载3个证书到本地，以及根证书，准备之后客户端（树莓派）与云端建立加密通信所用
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
 
 * 设置device相应的权限（Policy）
 左侧TAB，选择Secure->Policies，点击Create创建policy. 输入policyName,例如: lightdevie_policy,然后如下图所示
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4-0.jpg)
 
 点击add statements中的advanced mode，并复制如下的数据到命令行中
 ```json
@@ -67,7 +66,7 @@
 * 绑定证书和policy
 点击左侧tab，Secure->Certificates，选中刚刚创建的Certificates. 进入Certificate详细界面后，选择attach policy，如下图所示
 选择上一步中创建的 lightdevie_policy policy
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4.jpg)
 
 至次，设备再AWS IOT中的注册已经结束，下面进入模拟设备运行的环节。
 
@@ -92,31 +91,31 @@ total 16
 ```
 其中aws-smarthome-air-purifier 为代码解压目录
 * 修改代码并运行
+返回aws-smarthome-air-purifier/代码目录，修改主运行文件index.js为如下
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic5.jpg)
 
 返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing如light, 进入如下界面，红框即位endpoint
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic6.jpg)
 
-
-返回树莓派命令行，下载node的相关依赖包，输入如下指令
+切换到树莓派命令行，下载node的相关依赖包，输入如下指令
 ```shell
 $ npm install
 ```
 * 验证消息上传
-
-返回AWS Iot 界面，点击左侧 Test Tab，如下图所示订阅lights_online topic
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
-
+切换到AWS Iot 界面，点击左侧 Test Tab，如下图所示订阅lights_online topic，此处topic只要与客户端对应即可
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
 
 继续返回树莓派命令行
 ```shell
 $node index.js
 ```
 得到如下的输出
-同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。
-* 验证消息下发的逻辑
-同样的，在Test界面点击publish to topic, 进入如下界面，并修改输出如下图所示
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
-
+同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。 
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
+* 验证消息下发的逻辑
+同样，在Test界面,并修改消息如下图所示
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
 点击publish to topic，发现灯亮（风扇转）
 同理，修改message的value为0，点击Publish to topic发现灯灭（风扇停）。
 
