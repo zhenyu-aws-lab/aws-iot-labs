@@ -55,7 +55,7 @@ total 16
 ```
 其中aws-smarthome-air-purifier 为代码解压目录
 #### 2.修改代码并运行
-修改index.js主程序如下图所示：
+修改index.js主程序如下图所示：<br>
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic4.jpg)
 
 切换到AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing 如light, 进入如下界面，红框即位上图3所需的端点（endpoint）
