@@ -34,7 +34,7 @@
 左侧TAB，选择Secure->Policies，点击Create创建policy. 输入policyName,例如: lightdevie_policy,然后如下图所示
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4-0.jpg)
 
-点击上图add statements中的advanced mode，并复制如下的数据到命令行中
+点击上图add statements中的advanced mode，使用json模版为设备添加权限。复制如下的数据到命令行中
 ```json
 {
   "Version": "2012-10-17",
@@ -65,6 +65,9 @@
   ]
 }
 ```
+上述中的主要元素有Effect,Action和Resource. 以第一条为例，Effect:Allow，表示允许操作；ACTION的中的"iot:Publish",表示允许已注册的设备向云端IoT Core发送消息；最后Resource:* 表示可以对任何云端的topic执行上述的ACTION。
+*在实际应用中，我们通常回限定设备只能发送和接受指定topic的消息
+
 #### 4.绑定证书和policy
 点击左侧tab，Secure->Certificates，选中刚刚创建的Certificates. 进入Certificate详细界面后，选择attach policy，如下图所示
 选择上一步中创建的 lightdevie_policy policy
@@ -76,7 +79,7 @@
 --------
 
 #### 1.上传代码到设备
-由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
+由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送，为了便于观看，建议用户同时打开树莓派以及AWS IOT两个界面
 
 上传完毕后采用下述的指令解压
 ```shell
@@ -113,7 +116,7 @@ $ npm install
 $node index.js
 ```
 得到如下的输出:
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8-0.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8-0.jpg)  
 
 同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。 
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
