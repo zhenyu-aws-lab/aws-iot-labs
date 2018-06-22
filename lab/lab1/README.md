@@ -15,10 +15,10 @@
 * 创建物
 进入IOT 服务后，点击左侧列表Manage->Things,进入下述界面. 点击Register thing
 
-![image](http://github.com/zhenyu-aws-lab/aws-iot-labs/raw/develop/images/lab1/pic2-1.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2-1.jpg)
 
 此界面，实际环境下我们通常选择注册多个事物，此处为了演示，我们选择create a single thing.
-![image](http://github.com/zhenyu-aws-lab/aws-iot-labs/raw/develop/images/lab1/pic2.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2-2.jpg)
 
 进入如下列表后, 输入对于本地设备的命名, 比如light, 其他保持默认点击下一步.
  
@@ -26,12 +26,12 @@
 此页面点击create certificate
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
 
-得到如下证书, 分别下载4个证书到本地，准备之后客户端（树莓派）与云端建立加密通信所用
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4.jpg)
+得到如下证书, 分别下载3个证书到本地，以及根证书，准备之后客户端（树莓派）与云端建立加密通信所用
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
 
 * 设置device相应的权限（Policy）
 左侧TAB，选择Secure->Policies，点击Create创建policy. 输入policyName,例如: lightdevie_policy,然后如下图所示
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic5.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic4.jpg)
 
 点击add statements中的advanced mode，并复制如下的数据到命令行中
 ```json
