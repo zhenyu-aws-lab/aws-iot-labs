@@ -1,15 +1,17 @@
 前提条件：
-------
+======
 使用具有IOT服务权限的用户登陆
 
 
-### 进入IOT服务
+进入IOT服务
+--------
 
 进入IOT Core service 如下图所示
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic1.jpg)
 
 
-### 创建IOT中个的物（thing）
+创建IOT中个的物（thing）
+--------
 
 #### 创建物
 进入IOT 服务后，点击左侧列表Manage->Things,进入下述界面. 点击Register thing
@@ -70,7 +72,8 @@
 
 至次，设备再AWS IOT中的注册已经结束，下面进入模拟设备运行的环节。
 
-### 设备运行代码，连接AWS IOT云端服务
+设备运行代码，连接AWS IOT云端服务
+--------
 
 #### 上传代码到设备
 由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo1.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
@@ -94,7 +97,7 @@ total 16
 返回aws-smarthome-air-purifier/代码目录，修改主运行文件index.js为如下
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic5.jpg)
 
-返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing如light, 进入如下界面，红框即位endpoint
+对与上图中的3，我们需要切换回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing如light, 进入如下界面，红框即位endpoint
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic6.jpg)
 
 切换到树莓派命令行，下载node的相关依赖包，输入如下指令
@@ -119,4 +122,5 @@ $node index.js
 点击publish to topic，发现灯亮（风扇转）
 同理，修改message的value为0，点击Publish to topic发现灯灭（风扇停）。
 
-### 停止程序，断开电源
+停止程序，断开电源
+--------
