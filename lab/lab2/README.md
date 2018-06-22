@@ -1,11 +1,20 @@
 前提条件：完成实验1
 ----------
+### 实验说明
+实验目的：熟悉IoT Core Rule Engine, 熟悉Shadow状态机，熟悉IoT设备与云端连接后的数据处理
+AWS组件：
+##### IoT Core Rule Engine
+##### Shadow
+##### DynamoDB
+##### IAM Role
 
-0.创建DynamoDB的表格
-表格如下所示，点击创建，除了名字以外都选择默认。
+### 创建DynamoDB的表格
+IoT中的设备消息发送到云端后，可以触发相应的数据处理，存储流程。本实验将light设备中的状态都存储到Dynamodb数据库中。
+
+进入DynamoDb服务，表格如下所示，点击创建，除了名字以外都选择默认。
 
 点击进入Item栏，我们发现现在是没有Item的。
-1.配置Rule Engine
+### 配置Rule Engine
 进入AWS IOT主界面，点击Act，然后点击右上角Create按钮。进入创建页面后，如下图所示进行设置，名字可以自定义
 
 最后点击 Add action，选择insert a message to DynamoDb Table。插入规则如下图所示
@@ -13,7 +22,7 @@
 
 此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择该Role，点击add action。
 
-2.测试设备与云端通信
+### 测试设备与云端通信
 * 上传代码到设备
 由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo2.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
 
@@ -104,4 +113,4 @@ $aws/things/light/shadow/get
 * 测试Rule engine的效果
 我们在步骤1中设置了rule engine的规则，即把对应于灯泡（风扇）开关的信息，进行记录。那么我们现在去查询我们对应的dynamodb数据库，可以发现其中已经插入了数条信息。主键为物的名称，payload列为每条灯泡（风扇）开关的具体指令。
 
-3.实验结束
+### 实验结束
