@@ -25,11 +25,12 @@ IoT中的设备消息发送到云端后，可以触发相应的数据处理，�
 二.配置Rule Engine
 ----------------
 进入AWS IOT主界面，点击Act，然后点击右上角Create按钮。进入创建页面后，如下图所示进行设置，名字可以自定义
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic2.jpg)
 
 最后点击 Add action，选择insert a message to DynamoDb Table。插入规则如下图所示
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic3.jpg)
 
-此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择该前提条件中创建的Role，点击add action。
+此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择在前提条件中创建的Role，点击add action。
 
 三.测试设备与云端通信
 ----------------
@@ -50,10 +51,11 @@ total 16
 ```
 其中aws-smarthome-air-purifier 为代码解压目录
 #### 2.修改代码并运行
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
+修改index.js主程序如下图所示：
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic4.jpg)
 
-返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing 如light, 进入如下界面，红框即位上图3中国年的端点（endpoint）
-
+切换到AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing 如light, 进入如下界面，红框即位上图3所需的端点（endpoint）
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic5.jpg)
 
 返回树莓派命令行，下载node的相关依赖包，输入如下指令
 ```shell
