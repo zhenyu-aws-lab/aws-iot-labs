@@ -67,7 +67,7 @@
 * 绑定证书和policy
 点击左侧tab，Secure->Certificates，选中刚刚创建的Certificates. 进入Certificate详细界面后，选择attach policy，如下图所示
 选择上一步中创建的 lightdevie_policy policy
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic6.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
 
 至次，设备再AWS IOT中的注册已经结束，下面进入模拟设备运行的环节。
 
@@ -94,7 +94,7 @@ total 16
 * 修改代码并运行
 
 返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing如light, 进入如下界面，红框即位endpoint
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic7.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
 
 
 返回树莓派命令行，下载node的相关依赖包，输入如下指令
@@ -104,7 +104,7 @@ $ npm install
 * 验证消息上传
 
 返回AWS Iot 界面，点击左侧 Test Tab，如下图所示订阅lights_online topic
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
 
 
 继续返回树莓派命令行
