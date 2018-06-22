@@ -31,7 +31,10 @@ IoT中的设备消息发送到云端后，可以触发相应的数据处理，�
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic3.jpg)
 
 此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择在前提条件中创建的Role，点击add action。
-
+* 对于更多的关于写入DynamoDB的规则可参考：
+[Sql for DDB](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-sql-version.html)
+* 对于Rule Engine更多的信息可参见：
+[Rule engine](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html)
 三.测试设备与云端通信
 ----------------
 #### 1.上传代码到设备
