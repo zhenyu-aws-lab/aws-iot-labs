@@ -1,14 +1,19 @@
-前提条件：完成实验1
+前提条件：
+==========
+* 完成实验1
+* 创建具有Dynamodb操作权限的角色
+
+实验说明
 ----------
-### 实验说明
-实验目的：熟悉IoT Core Rule Engine, 熟悉Shadow状态机，熟悉IoT设备与云端连接后的数据处理
-AWS组件：
+* 实验目的：熟悉IoT Core Rule Engine, 熟悉Shadow状态机，熟悉IoT设备与云端连接后的数据处理
+* 涉及AWS组件：
  * IoT Core Rule Engine
  * Shadow
  * DynamoDB
  * IAM Role
 
-### 创建DynamoDB的表格
+一 创建DynamoDB的表格
+----------------
 IoT中的设备消息发送到云端后，可以触发相应的数据处理，存储流程。本实验将light设备中的状态都存储到Dynamodb数据库中。
 
 进入DynamoDb服务，表格如下所示，点击创建，除了名字以外都选择默认。
