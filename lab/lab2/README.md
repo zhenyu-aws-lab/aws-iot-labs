@@ -35,6 +35,7 @@ IoT中的设备消息发送到云端后，可以触发相应的数据处理，�
 [Sql for DDB](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-sql-version.html)
 * 对于Rule Engine更多的信息可参见：
 [Rule engine](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html)
+
 三.测试设备与云端通信
 ----------------
 #### 1.上传代码到设备
