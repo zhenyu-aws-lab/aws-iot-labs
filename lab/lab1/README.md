@@ -6,7 +6,6 @@
 ### 进入IOT服务
 
 进入IOT Core service 如下图所示
-
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic1.jpg)
 
 
@@ -110,7 +109,7 @@ $ npm install
 $node index.js
 ```
 得到如下的输出
-![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic9.jpg)
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8-0.jpg)
 同时我们在Test界面看到了树莓派已上线的消息，即设备到云端的发送消息成功。 
 ![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic8.jpg)
 * 验证消息下发的逻辑
