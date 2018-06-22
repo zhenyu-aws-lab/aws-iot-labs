@@ -17,6 +17,8 @@
 IoT中的设备消息发送到云端后，可以触发相应的数据处理，存储流程。本实验将light设备中的状态都存储到Dynamodb数据库中。
 
 进入DynamoDb服务，表格如下所示，点击创建，除了名字以外都选择默认。
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab2/pic1.jpg)
+
 
 点击进入Item栏，我们发现现在是没有Item的。
 
@@ -25,20 +27,19 @@ IoT中的设备消息发送到云端后，可以触发相应的数据处理，�
 进入AWS IOT主界面，点击Act，然后点击右上角Create按钮。进入创建页面后，如下图所示进行设置，名字可以自定义
 
 最后点击 Add action，选择insert a message to DynamoDb Table。插入规则如下图所示
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic2.jpg)
 
-
-此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择该Role，点击add action。
+此时，需要建立一个IOT服务能够访问DynamoDB数据库的Role，选择该前提条件中创建的Role，点击add action。
 
 三.测试设备与云端通信
 ----------------
 #### 1.上传代码到设备
-由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo2.tar进行上传。另外由于模拟信息发送的因素，建议用户同时打开树莓派以及AWS IOT两个界面
-
+由于本次试验采用的为nodejs,所以要求树莓派上需要有node的运行环境, 并且将代码包demo2.tar进行上传
 上传完毕后采用下述的指令解压
 ```shell
 $ tar -xvf demo2.tar
 ```
-上传在1.中生成的证书到代码的同级目录，放置后如下所示:
+上传在实验1中生成的证书到代码的同级目录，放置后如下所示:
 ```shell
 pi@raspberrypi:~/Application/aws-smarthome-light-shadow/aws-smarthome-air-purifier/certs $ ls -l
 total 16
@@ -49,6 +50,7 @@ total 16
 ```
 其中aws-smarthome-air-purifier 为代码解压目录
 #### 2.修改代码并运行
+![image](https://raw.githubusercontent.com/zhenyu-aws-lab/aws-iot-labs/develop/images/lab1/pic3.jpg)
 
 返回AWS IOT主页面，点击左侧TAB，Manage->Things。选择刚注册的thing 如light, 进入如下界面，红框即位上图3中国年的端点（endpoint）
 
@@ -68,6 +70,7 @@ $ npm install
 $node index.js
 ```
 得到设备已成功注册的返回。
+
 返回测试准备中的界面3。查看到Device shadow已经接受到了树莓派注册的初始信息. 
 #### 5.测试利用Device shadow进行设备控制
 切换到界面2，发送如下的消息到topic: $aws/things/light/shadow/update
